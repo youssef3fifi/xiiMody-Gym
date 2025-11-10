@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - XiiMody Gym Management</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand">
+        <span>💪</span> XiiMody<span>Gym</span>
+      </a>
+      <ul class="navbar-menu">
+        <li><a href="index.html" class="active">Dashboard</a></li>
+        <li><a href="members.html">Members</a></li>
+        <li><a href="classes.html">Classes</a></li>
+        <li><a href="plans.html">Plans</a></li>
+        <li><a href="trainers.html">Trainers</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="page-header">
+      <h1 class="page-title">Dashboard</h1>
+    </div>
+
+    <!-- Statistics Cards -->
+    <div class="stats-grid" id="statsGrid">
+      <div class="stat-card">
+        <div class="stat-value" id="totalMembers">0</div>
+        <div class="stat-label">Total Members</div>
+      </div>
+      <div class="stat-card success">
+        <div class="stat-value" id="activeMembers">0</div>
+        <div class="stat-label">Active Members</div>
+      </div>
+      <div class="stat-card secondary">
+        <div class="stat-value" id="todayClasses">0</div>
+        <div class="stat-label">Today's Classes</div>
+      </div>
+      <div class="stat-card accent">
+        <div class="stat-value" id="totalRevenue">$0</div>
+        <div class="stat-label">Total Revenue</div>
+      </div>
+    </div>
+
+    <!-- Quick Info Section -->
+    <div class="grid">
+      <!-- Today's Classes -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Today's Classes</h2>
+        </div>
+        <div id="todayClassList">
+          <div class="loading-spinner">Loading...</div>
+        </div>
+      </div>
+
+      <!-- Recent Members -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Recent Members</h2>
+        </div>
+        <div id="recentMembersList">
+          <div class="loading-spinner">Loading...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

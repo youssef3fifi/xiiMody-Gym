@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trainers - XiiMody Gym Management</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand">
+        <span>💪</span> XiiMody<span>Gym</span>
+      </a>
+      <ul class="navbar-menu">
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="members.html">Members</a></li>
+        <li><a href="classes.html">Classes</a></li>
+        <li><a href="plans.html">Plans</a></li>
+        <li><a href="trainers.html" class="active">Trainers</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="page-header">
+      <h1 class="page-title">Our Trainers</h1>
+      <button class="btn btn-primary" onclick="openAddTrainerModal()">+ Add Trainer</button>
+    </div>
+
+    <!-- Trainers Grid -->
+    <div class="grid" id="trainersGrid">
+      <div class="loading-spinner">Loading trainers...</div>
+    </div>
+  </div>
+
+  <!-- Add/Edit Trainer Modal -->
+  <div class="modal" id="trainerModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modalTitle">Add Trainer</h2>
+        <button class="close-modal" onclick="closeTrainerModal()">&times;</button>
+      </div>
+      <form id="trainerForm" onsubmit="handleTrainerSubmit(event)">
+        <input type="hidden" id="trainerId">
+        
+        <div class="form-group">
+          <label class="form-label">Name *</label>
+          <input type="text" class="form-input" id="trainerName" required>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Specialty *</label>
+          <input type="text" class="form-input" id="trainerSpecialty" placeholder="e.g., Strength Training" required>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Experience *</label>
+          <input type="text" class="form-input" id="trainerExperience" placeholder="e.g., 5 years" required>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Email *</label>
+          <input type="email" class="form-input" id="trainerEmail" required>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Phone</label>
+          <input type="tel" class="form-input" id="trainerPhone">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Certifications (comma-separated)</label>
+          <input type="text" class="form-input" id="trainerCerts" placeholder="e.g., NASM-CPT, CSCS">
+        </div>
+        
+        <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+          <button type="button" class="btn btn-secondary" onclick="closeTrainerModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Trainer</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/trainers.js"></script>
+</body>
+</html>
